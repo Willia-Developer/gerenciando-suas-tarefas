@@ -1,3 +1,15 @@
+// Pré-carregar imagens de fundo manualmente
+const preloadImages = () => {
+  const images = ["./claro.jpg", "./escuro.jpg"];
+  images.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+  });
+};
+
+// Chamar a função para pré-carregar imagens
+preloadImages();
+
 // Seletores
 const taskInput = document.getElementById("task");
 const addTaskButton = document.getElementById("addTask");
