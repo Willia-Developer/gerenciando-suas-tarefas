@@ -6,6 +6,7 @@
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#007BFF",
+{
   "icons": [
     {
       "src": "./designer.png",
@@ -19,3 +20,4 @@
     }
   ]
 }
+
