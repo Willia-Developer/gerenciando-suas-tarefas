@@ -25,15 +25,15 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 // Salvar Tarefas no localStorage
 const saveTasks = () => localStorage.setItem("tasks", JSON.stringify(tasks));
 
-// Alternar Tema com Mudança de Imagem de Fundo
 toggleThemeButton.addEventListener("click", () => {
   const isDarkTheme = document.body.dataset.theme === "dark";
   document.body.dataset.theme = isDarkTheme ? "light" : "dark";
 
   // Alterar a imagem de fundo
-document.body.style.backgroundImage = isDarkTheme
-  ? "url('./claro.jpg')" // Caminho da imagem para o tema claro
-  : "url('./escuro.jpg')"; // Caminho da imagem para o tema escuro
+  document.body.style.backgroundImage = isDarkTheme
+    ? "url('./claro.jpg')" // Caminho da imagem para o tema claro
+    : "url('./escuro.jpg')"; // Caminho da imagem para o tema escuro
+});
 
 // Atualizar Barra de Progresso
 const updateProgress = () => {
