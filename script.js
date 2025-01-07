@@ -25,14 +25,29 @@ let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
 // Salvar Tarefas no localStorage
 const saveTasks = () => localStorage.setItem("tasks", JSON.stringify(tasks));
 
+// Alternar Tema e Atualizar Texto do Botão
 toggleThemeButton.addEventListener("click", () => {
   const isDarkTheme = document.body.dataset.theme === "dark";
+  
+  // Alternar entre temas
   document.body.dataset.theme = isDarkTheme ? "light" : "dark";
 
   // Alterar a imagem de fundo
   document.body.style.backgroundImage = isDarkTheme
     ? "url('./claro.jpg')" // Caminho da imagem para o tema claro
     : "url('./escuro.jpg')"; // Caminho da imagem para o tema escuro
+
+  // Atualizar o texto do botão
+  toggleThemeButton.textContent = isDarkTheme ? "Tema Escuro" : "Tema Claro";
+});
+
+// Configuração inicial do botão com base no tema atual
+document.addEventListener("DOMContentLoaded", () => {
+  if (!document.body.dataset.theme) {
+    document.body.dataset.theme = "light"; // Define um padrão
+  }
+  const isDarkTheme = document.body.dataset.theme === "dark";
+  toggleThemeButton.textContent = isDarkTheme ? "Tema Claro" : "Tema Escuro";
 });
 
 // Atualizar Barra de Progresso
@@ -156,6 +171,7 @@ taskInput.addEventListener("keypress", (e) => {
 // Renderizar Tarefas ao Carregar
 renderTasks();
 
+// Registrar Service Worker
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
