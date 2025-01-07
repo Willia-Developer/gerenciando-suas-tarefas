@@ -38,14 +38,11 @@ toggleThemeButton.addEventListener("click", () => {
     : "url('./escuro.jpg')"; // Caminho da imagem para o tema escuro
 
   // Atualizar o texto do botão
-  toggleThemeButton.textContent = isDarkTheme ? "Tema Escuro" : "Tema Claro";
+  toggleThemeButton.textContent = isDarkTheme ? "Tema Claro" : "Tema Escuro";
 });
 
 // Configuração inicial do botão com base no tema atual
 document.addEventListener("DOMContentLoaded", () => {
-  if (!document.body.dataset.theme) {
-    document.body.dataset.theme = "light"; // Define um padrão
-  }
   const isDarkTheme = document.body.dataset.theme === "dark";
   toggleThemeButton.textContent = isDarkTheme ? "Tema Claro" : "Tema Escuro";
 });
