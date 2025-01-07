@@ -19,10 +19,9 @@ toggleThemeButton.addEventListener("click", () => {
   document.body.dataset.theme = isDarkTheme ? "light" : "dark";
 
   // Alterar a imagem de fundo
-  document.body.style.backgroundImage = isDarkTheme
-    ? "url('claro.jpg')" // Caminho da imagem para o tema claro
-    : "url('escuro.jpg')"; // Caminho da imagem para o tema escuro
-});
+document.body.style.backgroundImage = isDarkTheme
+  ? "url('./claro.jpg')" // Caminho da imagem para o tema claro
+  : "url('./escuro.jpg')"; // Caminho da imagem para o tema escuro
 
 // Atualizar Barra de Progresso
 const updateProgress = () => {
