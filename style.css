@@ -1,0 +1,271 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url('claro_optimized.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: var(--text-color);
+  transition: background 0.3s, color 0.3s;
+}
+
+:root {
+  --bg-color: #f4f4f4;
+  --text-color: #333;
+  --btn-color: #007BFF;
+  --btn-hover: #0056b3;
+}
+
+[data-theme="dark"] {
+  --bg-color: #333;
+  --text-color: #f4f4f4;
+  --btn-color: #444;
+  --btn-hover: #222;
+  background: url('escuro_optimized.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 600px;
+  background: linear-gradient(135deg, rgba(0, 123, 255, 0.8), rgba(0, 230, 118, 0.8));
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: background 0.5s ease;
+}
+
+.container:hover {
+  background: linear-gradient(135deg, rgba(255, 123, 0, 0.8), rgba(118, 230, 0, 0.8));
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  text-align: center;
+  flex: 1 1 100%;
+}
+
+header button {
+  padding: 10px 15px;
+  background-color: var(--btn-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+}
+
+header button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Task Controls */
+.task-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.task-controls input {
+  flex: 1;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  transition: all 0.3s;
+}
+
+.task-controls input:focus {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
+  outline: none;
+}
+
+.task-controls button {
+  background-color: var(--btn-color);
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.task-controls button:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Filters */
+.filters {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.filters button {
+  flex: 1;
+  padding: 8px 15px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.filters button.active {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+.filters button:hover {
+  background: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Task List */
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  color: #fff;
+  transition: all 0.3s;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
+
+li button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+li button.complete {
+  background-color: #28a745;
+  color: #fff;
+}
+
+li button.complete:hover {
+  background-color: #1e7e34;
+}
+
+li button.delete {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+li button.delete:hover {
+  background-color: #bd2130;
+}
+
+/* Progress */
+#progressContainer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+progress {
+  width: 100%;
+  height: 20px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+progress::-webkit-progress-bar {
+  background-color: #ddd;
+  border-radius: 5px;
+}
+
+progress::-webkit-progress-value {
+  background-color: var(--btn-color);
+  border-radius: 5px;
+}
+
+/* Export Button */
+button#export {
+  padding: 10px;
+  margin-top: 20px;
+  background-color: var(--btn-color);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  display: block;
+  width: 100%;
+}
+
+button#export:hover {
+  background-color: var(--btn-hover);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  header {
+      flex-direction: column;
+      align-items: center;
+  }
+
+  .task-controls {
+      flex-direction: column;
+  }
+
+  .filters button {
+      flex: 1 1 calc(50% - 10px);
+  }
+}
+
+@media (max-width: 480px) {
+  .filters button {
+      flex: 1 1 100%;
+  }
+
+  li {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  li button {
+      width: 100%;
+      margin-top: 5px;
+  }
+}
